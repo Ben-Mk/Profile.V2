@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Navbar from "./Components/Navbar";
-import Body from "./Components/Body";
+import { createBrowserRouter } from "react-router-dom";
+import Homepage from "./pages/Homepage";
+import CreateProfile from "./pages/Create";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Navbar />
-    <Body />
+    <CreateProfile />
   </React.StrictMode>
 );

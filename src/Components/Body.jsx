@@ -9,12 +9,14 @@ export default function Body() {
   const [bio, setBio] = useState("");
   const [setup, setSetup] = useState(null);
   const [punchline, setPunchline] = useState(null);
-  useEffect(async () => {
-    const res = await fetch(
-      "https://official-joke-api.appspot.com/random_joke"
-    );
+  const getJoke = async () => {
+    const res = await fetch("http://localhost/Php-server/api.php");
     const data = await res.json();
-    const joke = data.setup;
+    console.log(data);
+  };
+
+  useEffect(() => {
+    getJoke();
   }, []);
 
   //handleFirstNameChange
@@ -43,7 +45,6 @@ export default function Body() {
   }
   return (
     <section className="signup-section">
-      {/* <h3>{setup}</h3> */}
       <form
         action="http://localhost/Php-server/api.php"
         method="post"
